@@ -100,7 +100,11 @@ flowchart TD
 
 The card only moves once the day-zero gate confirms the machine can talk to GitHub, and it only ships once the AI draft clears the three-item rubric. The same rails then carry a second card with no changes.
 
+The full build write-up, with screenshots and prose as captured during the build, lives in [`documents/ship-your-first-card-through-github.md`](./documents/ship-your-first-card-through-github.md).
+
 ## Implementation
+
+The steps below map to the diagram. For the full walkthrough with screenshots, see [`documents/ship-your-first-card-through-github.md`](./documents/ship-your-first-card-through-github.md).
 
 1. Install Git, the GitHub CLI, and VS Code, then run the day-zero gate: `git --version`, `gh auth status`, and `gh org list` confirm the tools work and the organization is linked before any card work starts.
 2. Design first: write the requirements and acceptance criteria, a MADR decision record (drafting with Ollama and Gemma 3 for an offline, zero-cost path, with a reversal trigger to a flat-rate client if the machine lacks the RAM or disk), and the three-item rubric.
