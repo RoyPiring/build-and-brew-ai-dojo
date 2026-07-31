@@ -98,27 +98,28 @@ flowchart TD
     class Learner,Decision io
 ```
 
-The card only moves once the day-zero gate confirms the machine can talk to GitHub, and it only ships once the AI draft clears the three-item rubric. The same rails then carry a second card with no changes.
-
-The full build write-up, with screenshots and prose as captured during the build, lives in [`documents/ship-your-first-card-through-github.md`](./documents/ship-your-first-card-through-github.md).
+The diagram shows the topology and data flow of the system as built. The full architectural narrative, with screenshots and prose, lives in [`documents/ship-your-first-card-through-github.md`](./documents/ship-your-first-card-through-github.md).
 
 ## Implementation
 
-The steps below map to the diagram. For the full walkthrough with screenshots, see [`documents/ship-your-first-card-through-github.md`](./documents/ship-your-first-card-through-github.md).
+This system is built across **6 phases**:
 
-1. Install Git, the GitHub CLI, and VS Code, then run the day-zero gate: `git --version`, `gh auth status`, and `gh org list` confirm the tools work and the organization is linked before any card work starts.
-2. Design first: write the requirements and acceptance criteria, a MADR decision record (drafting with Ollama and Gemma 3 for an offline, zero-cost path, with a reversal trigger to a flat-rate client if the machine lacks the RAM or disk), and the three-item rubric.
-3. Stand up the rails: create the private repository inside the organization and a Project board with two issues, so the process exists before the draft.
-4. Draft with the AI: feed the card template and the sample problem to Ollama and Gemma 3 to produce a structured first draft.
-5. Score and gate: check the draft against the rubric. It failed item three on hedged language, so rewrite the softened line into a direct honest-limit statement ("This card does not connect a single offline person") and re-score to 3 of 3.
-6. Ship and close the loop: work a feature branch, commit the signature artifacts, open a pull request with closing keywords for both issues, merge to main, and tag the release.
-7. Prove reuse: run the secret mission, a second card on maternal mortality verified against the latest World Health Organization data, through the same loop with no rail changes.
+1. Setting Up the Engineering Environment
+2. Designing Before Building
+3. Standing Up the Rails and AI-Drafting the Card
+4. Scoring the Draft and Enforcing the Quality Gate
+5. Shipping the Card and Closing the Loop
+6. Proving the Rails Are Reusable
+
+For the full walkthrough with screenshots and step-by-step content, see [`documents/ship-your-first-card-through-github.md`](./documents/ship-your-first-card-through-github.md).
 
 ## Validation
 
-The Implementation above is what was done. These are the concrete results that prove it worked:
+Each build phase below is documented in [`documents/ship-your-first-card-through-github.md`](./documents/ship-your-first-card-through-github.md), with screenshots, configuration, and notes as captured during the build:
 
-- ✅ The AI draft cleared a fixed three-item rubric at 3 of 3, and the one failure it caught (item three, hedged language) was rewritten to a direct honest-limit line before merge, not shipped soft.
-- ✅ The shipped card states all three required parts: the problem plainly, a sourced number with its citation, and an explicit line on what it does not fix.
-- ✅ The repository lives in the GitHub organization, both issues moved to Done from the pull-request linkage rather than a manual status change, and the release is tagged.
-- ✅ The same rails shipped a second card on a different problem with no changes, proving the loop reuses.
+- ✅ Setting Up the Engineering Environment
+- ✅ Designing Before Building
+- ✅ Standing Up the Rails and AI-Drafting the Card
+- ✅ Scoring the Draft and Enforcing the Quality Gate
+- ✅ Shipping the Card and Closing the Loop
+- ✅ Proving the Rails Are Reusable
