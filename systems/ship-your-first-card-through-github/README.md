@@ -114,6 +114,8 @@ The steps below map to the diagram. For the full walkthrough with screenshots, s
 6. Ship and close the loop: work a feature branch, commit the signature artifacts, open a pull request with closing keywords for both issues, merge to main, and tag the release.
 7. Prove reuse: run the secret mission, a second card on maternal mortality verified against the latest World Health Organization data, through the same loop with no rail changes.
 
+## Validation
+
 The Implementation above is what was done. These are the concrete results that prove it worked:
 
 - ✅ The AI draft cleared a fixed three-item rubric at 3 of 3, and the one failure it caught (item three, hedged language) was rewritten to a direct honest-limit line before merge, not shipped soft.
