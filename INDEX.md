@@ -6,4 +6,8 @@ The dojo runs a menu of 100 ranked builds across the twelve solutions-engineerin
 
 ## Systems
 
-_No systems onboarded yet. Target: 100._
+| # | System | What it drills | What it proves |
+|--:|---|---|---|
+| 1 | [Ship Your First Card Through GitHub](./systems/ship-your-first-card-through-github/) | The GitHub delivery loop | A sourced, honest one-page card shipped through a repo, a board, a pull request, and a tagged release, with a second card proving the rails reuse |
+
+**1 of 100 shipped.** The rest arrive one live build at a time.

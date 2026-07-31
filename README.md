@@ -1,6 +1,6 @@
 # Build & Brew: The AI Dojo
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-0-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--07--31-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-1-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--07--31-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *Every week we build one real AI project together, live. The dojo is free, and beginners are welcome.*
 
@@ -16,8 +16,10 @@ Every build takes one point of view, the high-performing solutions engineer, acr
 
 ## Systems
 
-Systems land here as they are onboarded, each with its architecture diagram, an implementation map, and the check that proved it works. Browse the catalog in [`INDEX.md`](./INDEX.md).
+- **[Ship Your First Card Through GitHub](./systems/ship-your-first-card-through-github/)**: the delivery loop drilled once, a sourced and honest one-page card shipped through a repo, a board, a pull request, and a tagged release, with a second card proving the rails reuse.
+
+More land here as they are onboarded, each with its architecture diagram, an implementation map, and the check that proved it works. Browse the catalog in [`INDEX.md`](./INDEX.md).
 
 ## The road to 100
 
-**Just getting started.** One project a week, built live, in the open, toward 100.
+**1 shipped, 99 to go.** One project a week, built live, in the open, toward 100.
