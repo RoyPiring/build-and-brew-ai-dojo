@@ -114,13 +114,9 @@ The steps below map to the diagram. For the full walkthrough with screenshots, s
 6. Ship and close the loop: work a feature branch, commit the signature artifacts, open a pull request with closing keywords for both issues, merge to main, and tag the release.
 7. Prove reuse: run the secret mission, a second card on maternal mortality verified against the latest World Health Organization data, through the same loop with no rail changes.
 
-## Validation
+The Implementation above is what was done. These are the concrete results that prove it worked:
 
-- ✅ Day-zero gate passes: `git --version`, `gh auth status`, and `gh org list` each return a confirmation before the repository is used.
-- ✅ The AI draft is scored against a fixed three-item rubric, not judged by feel.
-- ✅ Negative case caught: the draft failed rubric item three on hedged language and was rewritten to a direct honest-limit line, then re-scored to 3 of 3 before merge.
-- ✅ The card carries all three required parts: the problem stated plainly, a sourced number with its citation, and an explicit line on what the card does not fix.
-- ✅ The repository lives inside the GitHub organization, not a personal account.
-- ✅ Both issues are closed by the pull request through closing keywords, and a release is tagged.
-- ✅ The Project board shows both issues in Done, from the pull-request linkage rather than a manual status change.
-- ✅ Secret mission proves reuse: a second card on a different problem ships through the same loop with no changes to the rails.
+- ✅ The AI draft cleared a fixed three-item rubric at 3 of 3, and the one failure it caught (item three, hedged language) was rewritten to a direct honest-limit line before merge, not shipped soft.
+- ✅ The shipped card states all three required parts: the problem plainly, a sourced number with its citation, and an explicit line on what it does not fix.
+- ✅ The repository lives in the GitHub organization, both issues moved to Done from the pull-request linkage rather than a manual status change, and the release is tagged.
+- ✅ The same rails shipped a second card on a different problem with no changes, proving the loop reuses.
