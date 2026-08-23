@@ -2,9 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-4-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--08--20-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
-> *Every week we build one real AI project together, live. The dojo is free, and beginners are welcome.*
+> *Every week we build one real solutions engineering project together, live. The dojo is free, and beginners are welcome.*
 
-Build & Brew is the NextWork live cohort, and I run it as the Build Master. Each week the room builds one real, end-to-end AI project together on the NextWork Discord. You can build along or just watch, and you never have to speak. Every build lands in a GitHub repo, finished or not. The point is plain: practice, and proof you can do the work.
+Build & Brew is the NextWork live cohort, and I run it as the Build Master. Each week the room builds one real, end-to-end solutions engineering project together on the NextWork Discord. You can build along or just watch, and you never have to speak. Every build lands in a GitHub repo, finished or not. The point is plain: practice, and proof you can do the work.
 
 ## What each build drills
 
