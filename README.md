@@ -1,6 +1,6 @@
 # Build & Brew: The AI Dojo
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-4-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--08--20-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-5-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--08--26-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *Every week we build one real solutions engineering project together, live. The dojo is free, and beginners are welcome.*
 
@@ -20,9 +20,10 @@ Every build takes one point of view, the high-performing solutions engineer, acr
 - **[Terraform Module Testing and Decisions](./systems/terraform-module-testing-and-decisions/)**: a provable Terraform network module, a seeded boundary bug fixed to fail closed, an AI-drafted test matrix scored red to green, a clean Checkov scan, and a CI gate that runs with no cloud account.
 - **[Build an Observable Health-Check Service](./systems/observable-health-check-service/)**: liveness and readiness split into two endpoints with different code paths, proven by killing the backing store so /readyz returns 503 while /livez holds 200, with local OpenTelemetry traces and a graceful shutdown drain.
 - **[SRE Error Budget Arithmetic](./systems/sre-error-budget-arithmetic/)**: burn-rate thresholds derived by hand and matched against Sloth-generated MWMB rules on all twelve values, then proven with promtool on two synthetic series so a 10% outage pages and a 0.2% leak only tickets.
+- **[DORA Delivery Scoreboard with DuckDB](./systems/dora-delivery-scoreboard/)**: five DORA measures defined in SQL over a captured corpus, where the same deployments give 26.0h or 1.0h depending on where the clock starts, and a two-check AI gate had to pass before the rework rate was allowed out.
 
 More land here as they are onboarded, each with its architecture diagram, an implementation map, and the check that proved it works. Browse the catalog in [`INDEX.md`](./INDEX.md).
 
 ## The road to 100
 
-**4 shipped, 96 to go.** One project a week, built live, in the open, toward 100.
+**5 shipped, 95 to go.** One project a week, built live, in the open, toward 100.
