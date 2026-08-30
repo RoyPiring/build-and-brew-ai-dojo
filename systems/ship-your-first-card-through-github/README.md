@@ -28,7 +28,7 @@ flowchart TD
 
     subgraph Setup["Day-zero gate"]
         Toolchain(Git, gh CLI, and VS Code installed)
-        GateCheck{{git --version, gh auth status, gh org list}}
+        GateCheck{{"git --version, gh auth status, gh org list"}}
         OrgReady[(GitHub organization linked)]
     end
 
