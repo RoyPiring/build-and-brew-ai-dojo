@@ -1,6 +1,6 @@
 # Build & Brew: The AI Dojo
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-6-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--03-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-7-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--10-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *Every week we build one real solutions engineering project together, live. The dojo is free, and beginners are welcome.*
 
@@ -22,9 +22,10 @@ Every build takes one point of view, the high-performing solutions engineer, acr
 - **[SRE Error Budget Arithmetic](./systems/sre-error-budget-arithmetic/)**: burn-rate thresholds derived by hand and matched against Sloth-generated MWMB rules on all twelve values, then proven with promtool on two synthetic series so a 10% outage pages and a 0.2% leak only tickets.
 - **[DORA Delivery Scoreboard with DuckDB](./systems/dora-delivery-scoreboard/)**: five DORA measures defined in SQL over a captured corpus, where the same deployments give 26.0h or 1.0h depending on where the clock starts, and a two-check AI gate had to pass before the rework rate was allowed out.
 - **[Build a Typed Crossplane v2 API](./systems/typed-crossplane-platform-api/)**: one namespaced platform API where CEL admission refuses a bad request before anything is stored, and deleting a composed Deployment brings it back at 1/1 with no second apply.
+- **[Prove an IAM Permissions Boundary](./systems/iam-permissions-boundary-proof/)**: a ceiling tested instead of assumed, where the same widening that was allowed unbounded is refused once the boundary attaches, and explicit deny, implicit deny and boundary refusal stay four distinct answers.
 
 More land here as they are onboarded, each with its architecture diagram, an implementation map, and the check that proved it works. Browse the catalog in [`INDEX.md`](./INDEX.md).
 
 ## The road to 100
 
-**6 shipped, 94 to go.** One project a week, built live, in the open, toward 100.
+**7 shipped, 93 to go.** One project a week, built live, in the open, toward 100.
