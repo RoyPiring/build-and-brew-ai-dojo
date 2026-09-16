@@ -1,0 +1,209 @@
+lens: build-and-brew-ai-dojo
+featured_enabled: auto
+threshold: 1
+scored_at: '2026-09-17'
+human_pin: []
+systems:
+- slug: evidence-first-threat-model
+  axis_scores:
+    technical_depth: 8
+    voice: 9
+    validation: 9
+  axis_reasoning:
+    technical_depth: A pytm 1.4.0 model in which every element traces to a documented PM claim, a local
+      Git evidence chain with commit 5434c85 recording seven design files and a prediction set before
+      out.json or dfd.dot existed, YES and LOCAL prediction rows so absence from tool output is never
+      read as safety, a six-check validator (check.py) that exits 1 on any failure, a threat register
+      requiring named owners and PM acceptance on High and Very High findings, and an isolated claim-flip
+      run. The design pipeline is deep; the runtime surface is a model plus a validator, which holds depth
+      at 8.
+    voice: 'The title (The Diagram That Argues Back) and the opener (a threat model a PM has to take on
+      faith is a diagram, not evidence) are the most distinctive in the pillar, and the recall paragraph
+      lands the two-sided lesson in one clause: the tool found two threats the review missed, and the
+      review kept three the tool cannot say. The document is dense but every sentence carries a fact,
+      and it names its own limit on Git ordering without hedging.'
+    validation: A deliberate must-fail run (check 3 and check 6 failing, exit 1) before the register existed,
+      then a pass on all six checks with recall 7 of 9 and an unmatched rate of 3 of 10, and a sensitivity
+      test where flipping isThirdParty removed exactly one finding (LLM03) with the original out.json
+      preserved. Predictions provably preceded findings via the commit id. The do-not-trust-the-confident-answer
+      reflex is exercised in both directions, review versus tool.
+  average: 8.67
+  rationale: STRIDE predictions committed before pytm ran, a must-fail ownership check, and recall 7 of
+    9
+  featured: true
+- slug: iam-permissions-boundary-proof
+  axis_scores:
+    technical_depth: 8
+    voice: 8
+    validation: 9
+  axis_reasoning:
+    technical_depth: Real AWS resources (BoundaryProofRole, BoundaryProofCeiling), three separate policy
+      inputs, eight predictions frozen in CSV, a six-check manifest, simulate-principal-policy run as
+      a control before attachment and again after, attachment proven by a fresh get-role read, dependency-ordered
+      teardown, optional Access Analyzer work held outside the seal at the v1.0.0 tag, and a recorded
+      cost. The diagram is the most detailed in the pillar. The engineered surface is a proof harness
+      rather than a deployed service, which keeps depth at 8.
+    voice: 'The README is close to reference quality: the boundary as an assumption not a control, four
+      outcomes kept apart as the real lesson, intersection semantics made visible, and a perfect score
+      written afterwards proves nothing. The supporting document is careful and precise but caveat-dense,
+      and its final sentence is truncated mid-word (reproduce the), a defect the public repo currently
+      carries.'
+    validation: 'The strongest evidence chain of the eight: an unbounded control returned allowed for
+      CreatePolicyVersion first, then AllowedByPermissionsBoundary false after the ceiling attached; explicit
+      deny, implicit deny, boundary refusal, and mutual allow kept as four distinct results; 8 of 8 against
+      predictions that existed before any output; teardown graded by fresh NoSuchEntity reads rather than
+      delete commands; and an optional check that returned FAIL kept visible without touching the score.
+      Failure modes and cleanup are both validated.'
+  average: 8.33
+  rationale: Eight IAM decisions frozen before the simulator ran, 8 of 8 held, teardown proven by NoSuchEntity
+  featured: true
+- slug: typed-crossplane-platform-api
+  axis_scores:
+    technical_depth: 9
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'The most infrastructure-heavy build of the eight: a kind cluster, Crossplane 2.4.0
+      by Helm, provider-kubernetes with ProviderConfigs, Function Patch and Transform, a namespaced ApplicationEnvironment
+      XRD with field-level CEL rules, and a Composition producing a Deployment and a Service. The contract
+      pack fixed boundary, behaviors, and evidence before implementation, and the AI proposal was kept
+      as a separate evidence file rather than converted into policy. The diagram traces both admission
+      and reconciliation paths and the legacy v1 control.'
+    voice: The README opens with the platform problem in the developer's terms (re-derive the platform's
+      opinions each time, and get them wrong differently each time) and the reconciliation line (a one-time
+      generator could produce the first Deployment, but it cannot explain the return) is the kind of sentence
+      that teaches. The document is more formal and expository than the README, with several sentences
+      restating the admission-before-storage ordering.
+    validation: 'Both halves of the contract are tested: an unpinned image tag refused on a server-side
+      dry run with nothing stored, and the queue-api Deployment returning NotFound then restored to 1/1
+      with no second apply. The legacy v1 XRD passing admission at exit code 0 is a documented trap, resolved
+      by a scope script printing Namespaced. Human corrections to the AI draft are recorded in the readout.
+      Held at 8 because there is no automated suite (named as the next step) and the evidence is six screenshots
+      plus narrative.'
+  average: 8.33
+  rationale: CEL refuses an unpinned image before storage; a deleted Deployment comes back at 1/1 unaided
+  featured: true
+- slug: dora-delivery-scoreboard
+  axis_scores:
+    technical_depth: 8
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: DuckDB over a captured 20-deployment corpus with five DORA measures defined in SQL,
+      sealed labels as the scoring authority, a two-check AI gate (record-level 20 of 20 and true-count
+      3 of 3) that withholds the rework rate on failure, a real-repository collector, and an offline HTML
+      readout annotated with what the records cannot prove. ADR-001 names its alternative, its cost (freshness),
+      and its reversal trigger. The three-clock finding (26.0h, 18.0h, 1.0h from the same rows) is a genuine
+      measurement insight.
+    voice: The README opener (a delivery metric nobody can trace is a number with a logo on it) is the
+      sharpest single line in the pillar, and the two findings are told with their exact numbers. The
+      document repeats the gate outcome in three sections and leans on a 'step goals' heading pattern,
+      which is the only filler.
+    validation: 'The gate passed on both checks with the reasoning for why one check alone is insufficient,
+      and the real-repository run is a true negative test: the collector printed a 0.0h lead time because
+      deploy time was copied from commit time, and an AssertionError against the 26.0 reference refused
+      it. The document is honest that the lab form showed No file chosen. The AI was scored but not caught
+      wrong, so the where-it-was-wrong report lives in the gate design rather than an observed miss.'
+  average: 8.0
+  rationale: Same 20 deployments give 26.0h or 1.0h lead time by clock, and an assertion caught a fake
+    0.0h
+  featured: true
+- slug: terraform-module-testing-and-decisions
+  axis_scores:
+    technical_depth: 8
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: A network module with a seeded input-boundary defect, a five-run terraform test matrix
+      against mock_provider, a validation block that moves rejection to variable assignment, a Checkov
+      scan with four findings each decided or skipped with a named reason, a GitHub Actions gate that
+      needs no cloud account, and four ADRs each carrying a reversal trigger. The diagram names variables.tf,
+      cidrsubnet, network.tftest.hcl, and the story/2 to story/3 commits. It also records what it did
+      not prove (idempotence), which is a mark of a mature design.
+    voice: 'The README states the thesis in one line (a module that works is not enough; this build makes
+      one that can be defended) and every paragraph carries a concrete decision: the /12 VPC that cannot
+      exist in AWS, the AZ cap justified by region shape rather than address space, the byte-identical
+      test file. The document is honest that no workflow ran on the merges themselves, which strengthens
+      rather than weakens the voice.'
+    validation: 'Case 5 is a real must-fail: it reported Missing expected failure on main, then went green
+      after one validation block with the test file unchanged. Case 6 rejects a seven-element AZ list.
+      Red and green commit SHAs anchor the CI claim. Held at 8 rather than 9 because the red-to-green
+      proof was produced through a different run sequence than the merges, and only three captured screenshots
+      support the walkthrough.'
+  average: 8.0
+  rationale: Seeded CIDR bug taken red to green with a byte-identical test file and a no-cloud CI gate
+  featured: true
+- slug: sre-error-budget-arithmetic
+  axis_scores:
+    technical_depth: 7
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: One Sloth specification generating MWMB recording and alert rules, a pinned toolchain
+      fetched and version-verified in the repo (Sloth v0.16.0, promtool 3.13.0), three candidate SLIs
+      argued in ADRs with two rejected in writing, and a self-contained HTML readout. The SLI denominator
+      argument (a fast 500 lands under le=0.3; dropping 499s shrinks the denominator under load) is deep
+      domain reasoning. No server ran and no metrics were scraped, which the build states itself, so it
+      is configuration engineering rather than a running system.
+    voice: The README earns its opening (a two-person roster cannot absorb a page that did not need to
+      happen) and names both rejected SLIs with the exact mechanism that made them unsafe. The document
+      is a touch more didactic in places (this format matters because, this setup reduced dependence on),
+      but every section still carries a specific value or file name.
+    validation: 'All twelve derived values (four burn rates, eight windows) matched the generated rules,
+      and promtool proved behavior on two synthetic series: the 10 percent outage pages and tickets at
+      one hour, the 0.2 percent leak tickets at six hours and pages nobody, which is the negative control
+      the roster needs. The scope boundary is stated plainly. The AI-scoring step is thin (an AI client
+      helped revise explanations; no error is reported).'
+  average: 7.67
+  rationale: Burn rates derived by hand match Sloth on all 12 values, then promtool proves page versus
+    ticket
+  featured: false
+- slug: observable-health-check-service
+  axis_scores:
+    technical_depth: 7
+    voice: 8
+    validation: 7
+  axis_reasoning:
+    technical_depth: 'A small but complete Flask service: /livez with no socket, /readyz opening TCP to
+      a killable store.py with a one-second timeout, OpenTelemetry spans to a local JSON-lines file, four
+      required environment variables with fail-fast on absence, and a SIGINT drain that flips readiness
+      first and holds liveness for two seconds on a daemon thread. Four ADRs and a C4 container view came
+      first. The scope is a single process with one dependency, so it is lighter than the control-plane
+      and evidence-pipeline builds.'
+    voice: The README frames the problem sharply (one endpoint is answering the wrong question) and names
+      the failure mode it is designed against, the restart storm. The four defended decisions are specific.
+      The central 503/200 assertion is restated in three places across the document, which is the one
+      stretch of repetition.
+    validation: 'The kill drill is a real negative test with observed output on both endpoints, the drain
+      window was observed, and the build closed on a verified v1.0.0 release with six screenshots. The
+      AI-scoring reflex is weak here: the document admits the draft already separated the routes, so the
+      ADR-01 correction was precautionary rather than a caught error. Evidence is manual observation,
+      not an automated suite.'
+  average: 7.33
+  rationale: 'Store killed: /readyz drops to 503 while /livez holds 200, then a SIGINT drain proves Factor
+    IX'
+  featured: false
+- slug: ship-your-first-card-through-github
+  axis_scores:
+    technical_depth: 4
+    voice: 6
+    validation: 6
+  axis_reasoning:
+    technical_depth: 'A Foundation-tier process build: repo, board, two issues, a feature branch, a PR
+      with closing keywords, and a tagged release, with Ollama and Gemma 3 drafting the card. There is
+      no code, no running service, and no test harness. The diagram names the real gate commands (git
+      --version, gh auth status, gh org list) and the MADR, but the system under test is a delivery loop
+      rather than an engineered system, which is the thinnest architecture of the eight.'
+    voice: The README opener (the card is the easy part) is direct and the honest-limit rewrite is told
+      plainly, but the supporting document leans on a repeated 'this mattered because' cadence and carries
+      one line that reads like a leaked instruction (that success should be documented in the README or
+      After-Action Review), which breaks the first-person build voice.
+    validation: Every phase has a screenshot, the AI draft failed rubric item three on a hedged limit
+      line and was rewritten to a direct fact before the 3 of 3 pass, both issues closed by merge and
+      the board showed Done, and a second WHO-sourced card reran the same rails. The evidence is GitHub
+      UI captures rather than an executable check, and there is no system-level negative test, so it sits
+      below the builds that prove behavior under failure.
+  average: 5.33
+  rationale: Rubric gate caught the AI's hedged limit line before a PR and tagged release closed both
+    issues
+  featured: false
