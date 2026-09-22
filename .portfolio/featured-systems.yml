@@ -1,7 +1,7 @@
 lens: build-and-brew-ai-dojo
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-09-17'
+scored_at: '2026-09-21'
 human_pin: []
 systems:
 - slug: evidence-first-threat-model
@@ -10,23 +10,24 @@ systems:
     voice: 9
     validation: 9
   axis_reasoning:
-    technical_depth: A pytm 1.4.0 model in which every element traces to a documented PM claim, a local
-      Git evidence chain with commit 5434c85 recording seven design files and a prediction set before
-      out.json or dfd.dot existed, YES and LOCAL prediction rows so absence from tool output is never
-      read as safety, a six-check validator (check.py) that exits 1 on any failure, a threat register
-      requiring named owners and PM acceptance on High and Very High findings, and an isolated claim-flip
-      run. The design pipeline is deep; the runtime surface is a model plus a validator, which holds depth
-      at 8.
-    voice: 'The title (The Diagram That Argues Back) and the opener (a threat model a PM has to take on
-      faith is a diagram, not evidence) are the most distinctive in the pillar, and the recall paragraph
-      lands the two-sided lesson in one clause: the tool found two threats the review missed, and the
-      review kept three the tool cannot say. The document is dense but every sentence carries a fact,
-      and it names its own limit on Git ordering without hedging.'
-    validation: A deliberate must-fail run (check 3 and check 6 failing, exit 1) before the register existed,
-      then a pass on all six checks with recall 7 of 9 and an unmatched rate of 3 of 10, and a sensitivity
-      test where flipping isThirdParty removed exactly one finding (LLM03) with the original out.json
-      preserved. Predictions provably preceded findings via the commit id. The do-not-trust-the-confident-answer
-      reflex is exercised in both directions, review versus tool.
+    technical_depth: A pytm 1.4.0 model in which every property traces to a written design claim, a
+      local Git evidence chain whose commits are split by stage, a pre-run verification that records
+      seven design files and the prediction set present while out.json and dfd.dot are absent, local
+      prediction rows for concerns the tool might not generate, a six-check validator that returns
+      non-zero on any failure, a threat register requiring named owners and PM acceptance on High and
+      Very High findings, an isolated claim-flip run, and an offline HTML evidence pack. The design
+      pipeline is deep; the runtime surface is a model plus a validator, which holds depth at 8.
+    voice: 'The title (The Diagram That Argues Back) and the framing (findings that challenge the design
+      without rewriting what was expected) are the most distinctive in the pillar, and the recall
+      paragraph lands the two-sided lesson in one clause: pytm found two items the review missed, while
+      the review identified three concerns the tool did not report. Every sentence carries a fact, and
+      the doc names its own limit on Git ordering and what stronger preservation would cost.'
+    validation: A deliberate must-fail run with the register absent, committed before the register
+      existed, then a pass on all six checks with EXIT 0, recall 7 of 9 and an unmatched rate of 3 of 10,
+      and a sensitivity test where flipping isThirdParty took 126 findings to 125, removing exactly one
+      (LLM03) with the original out.json preserved. Predictions provably preceded findings via the
+      pre-run True and False record and the design commit. The do-not-trust-the-confident-answer reflex
+      is exercised in both directions, review versus tool.
   average: 8.67
   rationale: STRIDE predictions committed before pytm ran, a must-fail ownership check, and recall 7 of
     9
