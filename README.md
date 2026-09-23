@@ -1,6 +1,6 @@
 # Build & Brew: The AI Dojo
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-8-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--21-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-9-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--23-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *Every week we build one real solutions engineering project together, live. The dojo is free, and beginners are welcome.*
 
@@ -22,8 +22,8 @@ Every build takes one point of view, the high-performing solutions engineer, acr
 - **[DORA Delivery Scoreboard with DuckDB](./systems/dora-delivery-scoreboard/)**: Same 20 deployments give 26.0h or 1.0h lead time by clock, and an assertion caught a fake 0.0h
 - **[Terraform Module Testing and Decisions](./systems/terraform-module-testing-and-decisions/)**: Seeded CIDR bug taken red to green with a byte-identical test file and a no-cloud CI gate
 
-_+ 3 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 4 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 ## The road to 100
 
-**8 shipped, 92 to go.** One project a week, built live, in the open, toward 100.
+**9 shipped, 91 to go.** One project a week, built live, in the open, toward 100.

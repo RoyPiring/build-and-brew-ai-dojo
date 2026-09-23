@@ -1,7 +1,7 @@
 lens: build-and-brew-ai-dojo
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-09-21'
+scored_at: '2026-09-23'
 human_pin: []
 systems:
 - slug: evidence-first-threat-model
@@ -183,6 +183,34 @@ systems:
   average: 7.33
   rationale: 'Store killed: /readyz drops to 503 while /livez holds 200, then a SIGINT drain proves Factor
     IX'
+  featured: false
+- slug: coverage-checked-decision-log
+  axis_scores:
+    technical_depth: 6
+    voice: 5
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'A local Git repository, a standard-library Python checker, and markdown records:
+      no running service, no cloud resource, no test harness beyond the checker itself. What lifts it
+      above the other process build in the pillar is one real mechanic, a coverage denominator committed
+      before any record exists and then grown by a scan of workload/main.tf from four rows to nine, with
+      the Terraform left unmodified so discovery cannot change what is being measured. The checker also
+      enforces structure, a required Consequences heading and two-way supersession links.'
+    voice: 'The three sections that carry content are sharp: a RECORDED driver ties a fact to a source
+      so the next owner can check the claim instead of trusting a retelling, a NOT RECORDED driver keeps
+      the missing reason as a question so nobody fills the gap with an invented rationale, and the audit
+      section states plainly that the draft''s own self-scored line was cut for lack of a source. The
+      rest of the document is template scaffolding: five of seven phases open with In this step, I am,
+      state an intention, and stop, so the build has to be reconstructed from the three sections and the
+      screenshots. The thinnest prose in the pillar.'
+    validation: 'Counted results at every turn rather than assertions: six settings found against four
+      note rows with the five missing ones named, the denominator moved four to nine, two deliberate
+      failures kept as evidence with the cause named in each message and exit 1 in both, records restored
+      before the clean pass, and the handover audited from 3 of 28 traced claims down to zero unsupported
+      claims with the three cut ones itemised. Held at 8 because the counts are reported rather than
+      shown, and the log and its history stay local, so ordering is inspectable rather than tamper-proof.'
+  average: 6.33
+  rationale: A checker grew the decision denominator 4 to 9, and two must-fail runs held the record format
   featured: false
 - slug: ship-your-first-card-through-github
   axis_scores:
