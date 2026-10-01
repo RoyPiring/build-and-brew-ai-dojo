@@ -1,7 +1,7 @@
 lens: build-and-brew-ai-dojo
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-09-23'
+scored_at: '2026-10-01'
 human_pin: []
 systems:
 - slug: evidence-first-threat-model
@@ -31,6 +31,37 @@ systems:
   average: 8.67
   rationale: STRIDE predictions committed before pytm ran, a must-fail ownership check, and recall 7 of
     9
+  featured: true
+- slug: medallion-reconciliation-pipeline
+  axis_scores:
+    technical_depth: 8
+    voice: 8
+    validation: 9
+  axis_reasoning:
+    technical_depth: 'A real three-layer dbt project on DuckDB over roughly 3.5 million rows, with one reusable
+      valid_trip macro as the single declared rule so validity cannot be described differently in two places,
+      a reconciliation test that counts the bronze side independently rather than trusting the chain, and a
+      repository that tracks models, macros, tests and evidence while keeping Parquet downloads, the virtual
+      environment, dbt target output and the database file out of history. Fully local on an embedded engine,
+      which is what holds it at 8: no remote storage, permissions, scheduling or orchestration is exercised,
+      and the document names that as the next step rather than claiming it.'
+    voice: 'The register is bounded throughout. The headline claim is stated and then immediately narrowed:
+      reconciliation shows the layers follow the declared rule and cannot show the rule is the right business
+      definition of a valid taxi trip, which is handed back to the people who own the data. The must-fail run
+      is labelled an expected failure created for validation rather than evidence of a broken pipeline, and
+      the second-month check is explained as proving what the pipeline excludes as well as what it includes.
+      One below the top because the layer responsibilities and the narrow-claim caveat are each restated three
+      times across the contract, build and reflection phases.'
+    validation: 'The strongest evidence shape in the pillar. A baseline zero-difference pass, then a controlled
+      defect that removed only the silver filter while leaving gold and the test untouched, so the failure was
+      attributable to one boundary: silver passed every row forward, gold expanded, the unchanged bronze-side
+      count mismatched, and the build returned one failed result with exit code 1. Restoring the filter
+      returned the zero difference, giving three connected results rather than one. The second-month check is
+      the other direction: landing June beside July took files from 1 to 2 while bronze held at 3,530,109 and
+      silver and gold both at 3,388,734, so scope was proven to come from the written boundary rather than
+      from file presence.'
+  average: 8.33
+  rationale: Removing one silver filter expanded gold and failed the unchanged reconciliation at exit 1
   featured: true
 - slug: iam-permissions-boundary-proof
   axis_scores:
@@ -133,7 +164,7 @@ systems:
       support the walkthrough.'
   average: 8.0
   rationale: Seeded CIDR bug taken red to green with a byte-identical test file and a no-cloud CI gate
-  featured: true
+  featured: false
 - slug: sre-error-budget-arithmetic
   axis_scores:
     technical_depth: 7
