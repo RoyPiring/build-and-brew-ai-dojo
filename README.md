@@ -1,6 +1,6 @@
 # Build & Brew: The AI Dojo
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-10-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--10--01-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Cohort](https://img.shields.io/badge/NextWork-Cohort-7B42BC?style=flat-square&labelColor=0d1117)](https://github.com/RoyPiring) [![Systems](https://img.shields.io/badge/systems-11-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--10--09-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *Every week we build one real solutions engineering project together, live. The dojo is free, and beginners are welcome.*
 
@@ -16,14 +16,14 @@ Every build takes one point of view, the high-performing solutions engineer, acr
 
 ## Featured Systems
 
+- **[Is Better Search Worth the Wait?](./systems/retrieval-rerank-benchmark/)**: Recall fell and nDCG rose at a p95 of 60,388 ms, after a broken scorer proved the metric
 - **[The Diagram That Argues Back](./systems/evidence-first-threat-model/)**: STRIDE predictions committed before pytm ran, a must-fail ownership check, and recall 7 of 9
 - **[Reconcile a Taxi Analytics Pipeline](./systems/medallion-reconciliation-pipeline/)**: Removing one silver filter expanded gold and failed the unchanged reconciliation at exit 1
 - **[Prove an IAM Permissions Boundary](./systems/iam-permissions-boundary-proof/)**: Eight IAM decisions frozen before the simulator ran, 8 of 8 held, teardown proven by NoSuchEntity
 - **[Build a Typed Crossplane v2 API](./systems/typed-crossplane-platform-api/)**: CEL refuses an unpinned image before storage; a deleted Deployment comes back at 1/1 unaided
-- **[DORA Delivery Scoreboard with DuckDB](./systems/dora-delivery-scoreboard/)**: Same 20 deployments give 26.0h or 1.0h lead time by clock, and an assertion caught a fake 0.0h
 
-_+ 5 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 6 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 ## The road to 100
 
-**10 shipped, 90 to go.** One project a week, built live, in the open, toward 100.
+**11 shipped, 89 to go.** One project a week, built live, in the open, toward 100.

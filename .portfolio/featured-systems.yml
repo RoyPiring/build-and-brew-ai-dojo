@@ -1,9 +1,40 @@
 lens: build-and-brew-ai-dojo
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-10-01'
+scored_at: '2026-10-09'
 human_pin: []
 systems:
+- slug: retrieval-rerank-benchmark
+  axis_scores:
+    technical_depth: 8
+    voice: 9
+    validation: 9
+  axis_reasoning:
+    technical_depth: 'Four retrieval stages built and compared on one benchmark: dense with
+      bge-small-en-v1.5, sparse with bm25s, reciprocal rank fusion at constant 60, and a
+      bge-reranker-v2-m3 cross-encoder confined to the same 50 candidates so it reorders a fixed pool
+      rather than introducing documents the retrievers never surfaced. A shared loader returns one corpus,
+      one query list and one label map that all four rows consume, with identifiers cast to strings, so a
+      changed score is attributable to the ranking method. The toolchain is pinned to named versions with
+      the models and SciFact cached locally, which takes network time out of the measured path. Held at 8
+      because the sample is 20 queries on one workstation and the full test was never run.'
+    voice: 'The register refuses the easy claim at every turn. Scope is declared as the 20-query run only,
+      with clinical guidelines, generated answers and the full test named as owed rather than reported.
+      The 300-query test is left unrun at an estimated 4.5 to 5 hours and no smaller stand-in is invented
+      to fill the gap. And the readout is turned on its own repository: trace-scored at 3 untraceable
+      claims out of 88, the three removed rather than explained, the teach-back losing two unsupported
+      method phrases, the after-action review dropping a claim of surprise that no retained evidence
+      recorded, and the original score preserved rather than rewritten after the correction.'
+    validation: 'The strongest scorer discipline in the pillar. The nDCG denominator was deliberately
+      broken, the fixture expected 0.4982 and received 0.6509, and that failure was retained in
+      check-out.txt with the broken line left uncommitted, so a faulty calculation could not pass as a
+      quality gain merely for producing a larger number. Restoring the denominator returned the fixture to
+      0.4982, and an empty git diff on metrics.py proves the working scorer matches the committed passing
+      version. The result is signed rather than spun: Recall@5 at -0.025 against nDCG@5 at +0.072, read
+      beside a p95 of 60,388 ms, which is what makes the decision defensible instead of a preference.'
+  average: 8.67
+  rationale: Recall fell and nDCG rose at a p95 of 60,388 ms, after a broken scorer proved the metric
+  featured: true
 - slug: evidence-first-threat-model
   axis_scores:
     technical_depth: 8
@@ -139,7 +170,7 @@ systems:
   average: 8.0
   rationale: Same 20 deployments give 26.0h or 1.0h lead time by clock, and an assertion caught a fake
     0.0h
-  featured: true
+  featured: false
 - slug: terraform-module-testing-and-decisions
   axis_scores:
     technical_depth: 8
