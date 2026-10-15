@@ -1,9 +1,41 @@
 lens: build-and-brew-ai-dojo
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-10-09'
+scored_at: '2026-10-14'
 human_pin: []
 systems:
+- slug: egrid-model-lineage-rebuild
+  axis_scores:
+    technical_depth: 8
+    voice: 9
+    validation: 9
+  axis_reasoning:
+    technical_depth: 'Three tools are given three separate jobs and wired so that each carries evidence the
+      others cannot: Git for source history, DVC for the workbook bytes behind an MD5 pointer with the 21 MB
+      file held outside the repository on an external remote, and MLflow for runs and registered versions with
+      a champion alias so the checker has one curated target. Two data revisions are tracked end to end, 932a841d
+      and 2449e137, each with its own registered version, and an executable schema gate runs ahead of training.
+      The toolchain is pinned at Python 3.13, MLflow 3.17.1 and DVC 3.67.1 with the versions written to
+      check-out.txt. Held at 8 rather than higher because the lab is one local workstation and the three tools
+      are standard pieces correctly assembled rather than anything built from scratch.'
+    voice: 'The register declines the flattering version at each point where one was available. The overrun is
+      stated plainly at about one and a half hours against a 45-minute plan, broken into its four parts, with
+      the cause named as a model-logging error resolved by pinning an older skops and time lost locating the
+      revision 1 workbook on the EPA site. The unregistered diagnostic run is described as a tracking run rather
+      than a model release, which is the honest reading of an artifact that could easily have been presented as
+      a third version. The shared DVC remote and hosted MLflow server that would let a team reproduce this from
+      separate machines are named as the next goal rather than implied to exist.'
+    validation: 'Two engineered failures, not one, and a recovery between them. The clean clone carried the code
+      and the DVC metadata but not the bytes: the commit check passed, the ROC AUC check passed, and the run
+      still failed on data_md5, which is what proves Git alone cannot rebuild or verify the model. dvc pull then
+      restored the exact workbook, the hash matched 2449e137, and a forced retrain returned three PASS lines and
+      ALL CHECKS PASS at 0.914372. The stale-data run is the sharper of the two: revision 1 still printed SCHEMA
+      OK and still passed ROC AUC at 0.9137, so it was acceptable on every check except identity, and the
+      fingerprint rejected it at exit code 1 while the registry stayed at two versions. The acceptance criteria
+      naming each required line were committed before any model code existed.'
+  average: 8.67
+  rationale: Schema and ROC AUC both passed on the wrong workbook; the MD5 fingerprint caught it at exit 1
+  featured: true
 - slug: retrieval-rerank-benchmark
   axis_scores:
     technical_depth: 8
@@ -145,7 +177,7 @@ systems:
       plus narrative.'
   average: 8.33
   rationale: CEL refuses an unpinned image before storage; a deleted Deployment comes back at 1/1 unaided
-  featured: true
+  featured: false
 - slug: dora-delivery-scoreboard
   axis_scores:
     technical_depth: 8
